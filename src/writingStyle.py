@@ -1,6 +1,6 @@
 from __future__ import division
 
-def uppercasedWordsInTweet(tweet):
+def captializedWordsInTweet(tweet):
     words=["I","A"]
     count=0
     if(len(tweet) != 0):
@@ -11,20 +11,27 @@ def uppercasedWordsInTweet(tweet):
     return count
 
 def exclamationCount(tweet):
-    tweetWords = tweet.split(" ")
+    tweetWords = tweet.split()
     count=0
-    for i in range(len(tweetWords)):
-        if (tweetWords[i].count("!")>2):
+    for word in tweetWords:
+        if (word.count("!")>2):
             count+=1
     return  count
 
 def questionMarkCount(tweet):
-    tweetWords = tweet.split(" ")
+    tweetWords = tweet.split()
     count=0
-    for i in range(len(tweetWords)):
-        if (tweetWords[i].count("?")>2):
+    for word in tweetWords:
+        if (word.count("?") > 2):
             count+=1
     return  count
 
+def capitalCountInAWord(tweet):
+    count=0
+    if (len(tweet) != 0):
+        for c in tweet:
+            if (str(c).isupper()):
+                count=count+1
+    return count
 
 

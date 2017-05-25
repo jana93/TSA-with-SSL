@@ -41,7 +41,7 @@ def mapTweet(tweet):
     preprocessed_tweet=preprocess.preProcessTweet(tweet)
     vector.append(lexicon.getLexiconScore(preprocessed_tweet,posLexicon,negLexicon))
     vector.append(microbloggingFeature.emoticonScore(preprocessed_tweet,emoticonDict))
-    vector.append(writingStyle.uppercasedWordsInTweet(tweet))
+    vector.append(writingStyle.captializedWordsInTweet(tweet))
     vector.append(writingStyle.exclamationCount(tweet))
     vector.append(writingStyle.questionMarkCount(tweet))
     time1=time.time()
@@ -234,7 +234,7 @@ def getAccuracyPrecision():
 # uncomment to classify test dataset
 # print "Loading test data..."
 #V, L = loadTest('../dataset/test.csv')
-# writeTest('../dataset/test.csv', MODEL)
+writeTest('../dataset/test.csv', MODEL)
 # writ labelled test dataset
 print getAccuracyPrecision()
 #accuracy,precision = getAccuracyPrecision()
